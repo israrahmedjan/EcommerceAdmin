@@ -10,18 +10,26 @@ async function connectToDatabase() {
     return db;
   }
 
+  // Initialize the MongoClient and connect
   client = new MongoClient(uri, {
     serverApi: {
       version: ServerApiVersion.v1,
       strict: true,
       deprecationErrors: true,
     },
+    useNewUrlParser: true,
+    useUnifiedTopology: true, // Use unified topology for better performance
   });
 
-  await client.connect();
-  console.log("Connected to MongoDB!");
-  db = client.db('onlineshop'); // Replace 'StrapiIsrar' with your actual database name
-  return db;
+  try {
+    await client.connect();
+    console.log("Connected to MongoDB!");
+    db = client.db('onlineshop'); // Use the correct database name
+    return db;
+  } catch (error) {
+    console.error('Error connecting to the database:', error);
+    throw error; // Rethrow error if connection fails
+  }
 }
 
 module.exports = connectToDatabase;
