@@ -27,7 +27,8 @@ async function connectToDatabase() {
     db = client.db('onlineshop'); // Use the correct database name
     return db;
   } catch (error) {
-    console.error('Error connecting to the database:', error);
+   // console.error('Error connecting to the database:', error);
+   res.json({'connect issue':error})
     throw error; // Rethrow error if connection fails
   }
 }

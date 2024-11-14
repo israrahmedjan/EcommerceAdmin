@@ -17,8 +17,9 @@ app.get('/products', async (req, res) => {
     
     res.json(products); // Send products data as JSON response
   } catch (error) {
-    console.error('Error fetching products:', error);
-    res.status(500).send('Error fetching products');
+    //console.error('Error fetching products:', error);
+    //res.status(500).send('Error fetching products');
+    res.json(error);
   }
 });
 
