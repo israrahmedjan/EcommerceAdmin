@@ -12,13 +12,13 @@ app.use(cors());
 
 // Alternatively, configure CORS with options
 
-const corsOptions = {
-  origin: 'https://ecommerce-admin-zeta-hazel.vercel.app/', // Allow specific origin
-  methods: ['GET', 'POST'], // Allow specific HTTP methods
-  allowedHeaders: ['Content-Type', 'Authorization'], // Allow specific headers
-  credentials: true, // Allow credentials (cookies, authorization headers, etc.)
-};
-app.use(cors(corsOptions));
+// const corsOptions = {
+//   origin: 'https://ecommerce-admin-zeta-hazel.vercel.app/', // Allow specific origin
+//   methods: ['GET', 'POST'], // Allow specific HTTP methods
+//   allowedHeaders: ['Content-Type', 'Authorization'], // Allow specific headers
+//   credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+// };
+// app.use(cors(corsOptions));
 
 app.get('/', (req, res) => {
   res.json({'Message': 'Home Page!'});
