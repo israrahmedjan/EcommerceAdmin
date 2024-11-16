@@ -17,8 +17,8 @@ async function connectToDatabase() {
       strict: true,
       deprecationErrors: true,
     },
-    useNewUrlParser: true,
-    useUnifiedTopology: true, // Use unified topology for better performance
+    // useNewUrlParser: true,
+    // useUnifiedTopology: true, // Use unified topology for better performance
   });
 
   try {
